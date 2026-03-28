@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | JKCOM Autonomous Stack</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .bg-docs { background: #0a0a0a; color: #e2e8f0; }
+        .sidebar-link:hover { background: rgba(59, 130, 246, 0.1); color: #60a5fa; }
+    </style>
+</head>
+
+<body class="bg-docs min-h-screen">
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg border-b border-slate-800 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <a href="/" class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-xl font-bold text-white">J</div>
+                    <span class="text-xl font-bold tracking-tight text-white">JKCOM Docs</span>
+                </a>
+            </div>
+            <a href="/" class="text-sm font-medium hover:text-blue-400 transition-colors">Back to Site</a>
+        </div>
+    </nav>
+
+    <div class="pt-24 max-w-7xl mx-auto px-6 grid lg:grid-cols-4 gap-12">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block space-y-8 sticky top-24 h-fit">
+            <div>
+                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Getting Started</h4>
+                <ul class="space-y-2">
+                    <li><a href="#introduction" class="block py-1 sidebar-link rounded px-2 transition-all">Introduction</a></li>
+                    <li><a href="#installation" class="block py-1 sidebar-link rounded px-2 transition-all">Installation</a></li>
+                    <li><a href="#quickstart" class="block py-1 sidebar-link rounded px-2 transition-all">Quick Start</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Architecture</h4>
+                <ul class="space-y-2">
+                    <li><a href="#perception" class="block py-1 sidebar-link rounded px-2 transition-all">Perception Engine</a></li>
+                    <li><a href="#fusion" class="block py-1 sidebar-link rounded px-2 transition-all">Sensor Fusion</a></li>
+                    <li><a href="#mapping" class="block py-1 sidebar-link rounded px-2 transition-all">HD Mapping</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Guides</h4>
+                <ul class="space-y-2">
+                    <li><a href="#use-cases" class="block py-1 sidebar-link rounded px-2 transition-all">Use Cases</a></li>
+                    <li><a href="#api-reference" class="block py-1 sidebar-link rounded px-2 transition-all">API Reference</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <main class="lg:col-span-3 space-y-16 pb-24">
+            <section id="introduction">
+                <h1 class="text-5xl font-extrabold mb-6">Introduction</h1>
+                <p class="text-xl text-slate-400 leading-relaxed">
+                    JKCOM is a high-performance, open-source perception and mapping stack designed for autonomous electric vehicles. 
+                    It leverages visual semantic segmentation, radar Doppler processing, and centimeter-level localization to provide 
+                    a robust foundation for autonomous mobility.
+                </p>
+            </section>
+
+            <section id="architecture">
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fas fa-sitemap text-blue-500"></i> System Architecture
+                </h2>
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 mb-8">
+                    <div class="relative bg-black/40 p-10 rounded-2xl border border-white/5 font-mono text-sm overflow-x-auto">
+                        <pre>
+[ Sensors ] ----> [ Perception ] ----> [ Fusion ] ----> [ Mapping ]
+    |                |                   |                |
+    +-- Camera <-----+                   |                |
+    +-- Radar <--------------------------+                |
+    +-- GPS/IMU <------------------------+----------------+
+                        </pre>
+                    </div>
+                    <p class="text-slate-400 mt-6">
+                        The stack is modular. Each component communicates via an internal messaging bus (or ROS 2 in production environments).
+                    </p>
+                </div>
+            </section>
+
+            <section id="installation">
+                <h2 class="text-3xl font-bold mb-6">Installation</h2>
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+                    <p class="mb-4 text-slate-300">Clone the repository and install dependencies:</p>
+                    <div class="bg-black p-4 rounded-xl font-mono text-emerald-400 text-sm mb-6">
+                        <code>git clone https://github.com/olivestackscode/JKCOM.git<br>cd JKCOM<br>pip install -r requirements.txt</code>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quickstart">
+                <h2 class="text-3xl font-bold mb-6">Quick Start</h2>
+                <p class="text-slate-400 mb-6">To launch the local simulation server and dashboard:</p>
+                <div class="bg-black p-4 rounded-xl font-mono text-emerald-400 text-sm">
+                    <code>python server.py</code>
+                </div>
+                <p class="mt-4 text-slate-400 italic text-sm">Head over to http://localhost:8000 to see the live feed.</p>
+            </section>
+
+            <section id="use-cases">
+                <h2 class="text-3xl font-bold mb-6">Use Cases</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-lg">
+                        <i class="fas fa-truck text-blue-500 text-2xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Autonomous Delivery</h3>
+                        <p class="text-slate-400 text-sm">Using JKCOM for last-mile delivery in Nigerian urban corridors with precision mapping.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-lg">
+                        <i class="fas fa-bus text-blue-500 text-2xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Regional Transit</h3>
+                        <p class="text-slate-400 text-sm">Enabling autonomous shuttle services for university campuses and gated communities.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="border-t border-slate-800 py-12 bg-black/50 mt-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
+            © 2026 JKCOM Autonomous Mobility Stack
+        </div>
+    </footer>
+</body>
+
+</html>

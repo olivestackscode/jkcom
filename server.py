@@ -16,6 +16,11 @@ async def get():
     with open("public/index.html", "r") as f:
         return HTMLResponse(content=f.read(), status_code=200)
 
+@app.get("/documentation")
+async def get_documentation():
+    with open("public/documentation.html", "r") as f:
+        return HTMLResponse(content=f.read(), status_code=200)
+
 @app.get("/api/status")
 async def get_status():
     return {
