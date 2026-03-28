@@ -1,0 +1,34 @@
+# JKCOM Requirements
+
+# Core Dependencies
+numpy
+opencv-python
+scipy
+pyyaml
+python-dotenv
+
+# AI & Computer Vision
+torch
+torchvision
+torchaudio
+onnx
+onnxruntime
+ultralytics  # For YOLOv8/v11 support
+
+# Mapping & SLAM
+fast-slam
+pyslam
+open3d
+
+# ROS 2 (Install via system, but these are Python wrappers)
+# python3-colcon-common-extensions
+
+# Web API
+fastapi
+uvicorn
+python-multipart
+
+# Utilities
+tqdm
+loguru
+pydantic
