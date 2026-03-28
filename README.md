@@ -1,8 +1,8 @@
-# JKCOM 🗺️🚗⚡
+# JKCOM
 
 **AI-Powered GPS Mapping and Perception Stack for Autonomous Electric Vehicles**
 
-JKCOM is an open-source framework that combines **computer vision**, **radar sensing**, and **GPS** to create accurate, real-time HD maps and robust localization for self-driving electric vehicles — with a focus on safety, efficiency, and real-world deployment.
+JKCOM is an open-source framework that combines **computer vision**, **radar sensing**, and **GPS** to create accurate, real-time HD maps and robust localization for self-driving electric vehicles - with a focus on safety, efficiency, and real-world deployment.
 
 ### Core Capabilities
 - **Multi-Sensor Fusion**: Camera (semantic segmentation, object detection) + Radar (velocity & range in all weather) + GPS/IMU
@@ -18,7 +18,7 @@ JKCOM is an open-source framework that combines **computer vision**, **radar sen
 - AI-driven map feature extraction (lanes, traffic signs, road boundaries)
 - GNSS-free fallback using visual localization
 - Lightweight models suitable for edge deployment on vehicle compute units
-- Modular design — easily swap sensors or add new modalities (LiDAR support planned)
+- Modular design - easily swap sensors or add new modalities (LiDAR support planned)
 
 ### Tech Stack
 - **Computer Vision**: OpenCV, YOLO, Segment Anything, Detectron2 / custom transformers
